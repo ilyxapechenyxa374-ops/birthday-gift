@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090a12">
+<title>С днём рождения!</title>
+<style>
+:root{--gold:#f6cf78;--cream:#fff4d9;--bg:#090a12}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#29203a 0%,#10101b 42%,#080910 100%);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:43px 43px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+main{position:relative;z-index:1;max-width:900px;margin:auto;padding:30px 20px 90px}
+.hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(3.4rem,11vw,7.5rem);line-height:.94;margin:25px 0 18px;font-weight:500;letter-spacing:-.055em;background:linear-gradient(110deg,#fff7df 10%,#e8bd66 48%,#fff0c9 80%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 12px 60px #f2c56b22}
+.subtitle{font-size:clamp(1rem,3vw,1.25rem);color:#d6ccbd;max-width:550px;line-height:1.7}
+button{border:0;cursor:pointer;font:inherit}
+.primary{margin-top:30px;padding:16px 27px;border-radius:999px;background:linear-gradient(110deg,#f5d58e,#d7a84e);color:#1b1420;font-weight:800;box-shadow:0 8px 35px #e8b95b33;transition:.25s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 45px #e8b95b55}
+.scroll{margin-top:55px;color:#8f8794;font-size:.8rem;letter-spacing:.15em}
+section{margin:30px 0;padding:clamp(25px,5vw,48px);border:1px solid #ffffff18;border-radius:26px;background:linear-gradient(145deg,#ffffff0c,#ffffff04);backdrop-filter:blur(12px);box-shadow:0 20px 70px #0003}
+h2{font:500 clamp(2rem,6vw,3.2rem) Georgia,serif;color:var(--gold);margin:0 0 18px}
+.message{font-size:1.08rem;line-height:1.9;color:#e7dfd2}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.card{padding:22px 15px;border-radius:18px;background:#ffffff09;border:1px solid #ffffff12;text-align:center}
+.card .emoji{font-size:2rem;display:block;margin-bottom:12px}
+.card b{display:block;color:var(--gold);margin-bottom:7px}
+.card span{color:#bcb3c2;font-size:.9rem;line-height:1.5}
+.gift{text-align:center}
+.giftbox{font-size:5rem;display:block;filter:drop-shadow(0 10px 20px #e8b95b33);animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(3deg)}}
+#surprise{display:none;margin-top:25px;padding:25px;border-radius:18px;background:#eac16b12;border:1px solid #eac16b55;color:#fff0cb;line-height:1.8;font-size:1.08rem;animation:reveal .6s ease}
+@keyframes reveal{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+footer{text-align:center;color:#837b89;padding:35px 10px 10px;font-size:.85rem}
+.confetti{position:fixed;top:-20px;width:8px;height:13px;z-index:5;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(760deg);opacity:.2}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}.hero{min-height:85vh}section{border-radius:20px}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow">Сегодня особенный день</div>
+    <h1>С днём<br>рождения!</h1>
+    <p class="subtitle">Этот день принадлежит тебе. Пусть впереди будет ещё больше поводов улыбаться, гордиться собой и кайфовать от жизни.</p>
+    <button class="primary" onclick="document.querySelector('#words').scrollIntoView({behavior:'smooth'});burst(65)">Открыть поздравление ↓</button>
+    <div class="scroll">ЛИСТАЙ ВНИЗ · ТЕБЯ ЖДЁТ СЮРПРИЗ</div>
+  </header>
+
+  <section id="words">
+    <div class="eyebrow">От души</div>
+    <h2>Брат, это твой день.</h2>
+    <div class="message">
+      Желаю тебе сил — чтобы справляться с любыми трудностями, смелости — чтобы идти за тем, чего действительно хочешь, и удачи — чтобы нужные двери открывались в нужный момент.<br><br>
+      Пусть рядом будут настоящие люди, в голове — большие идеи, а в жизни — побольше ярких моментов. Не сдавайся, не останавливайся и всегда оставайся собой. С праздником, брат! 🥂
+    </div>
+    <div class="cards">
+      <div class="card"><span class="emoji">🚀</span><b>Больших побед</b><span>Пусть любые цели становятся достижимыми.</span></div>
+      <div class="card"><span class="emoji">💪</span><b>Крепких сил</b><span>Здоровья, энергии и уверенности в себе.</span></div>
+      <div class="card"><span class="emoji">🍀</span><b>Настоящего счастья</b><span>Побольше поводов радоваться каждому дню.</span></div>
+    </div>
+  </section>
+
+  <section class="gift">
+    <div class="eyebrow">Маленький секрет</div>
+    <span class="giftbox">🎁</span>
+    <h2>А теперь — подарок</h2>
+    <p class="subtitle" style="margin:0 auto">Тут спрятаны ещё несколько слов. Нажми на кнопку, чтобы открыть.</p>
+    <button class="primary" id="openGift" onclick="openSurprise()">Открыть подарок ✨</button>
+    <div id="surprise">Самое главное — помни, что ты не один. Я всегда на твоей стороне. Спасибо, что ты мой брат. Пусть этот год станет одним из лучших в твоей жизни. Обнял! ❤️</div>
+  </section>
+  <footer>Сделано с теплом специально для тебя ✦</footer>
+</main>
+<script>
+function burst(n=45){
+ const colors=['#f6cf78','#fff0c9','#c6a5ff','#ff8fa3','#ffffff'];
+ for(let i=0;i<n;i++){
+  const el=document.createElement('i');el.className='confetti';
+  el.style.left=Math.random()*100+'vw';el.style.background=colors[Math.floor(Math.random()*colors.length)];
+  el.style.animationDuration=(2.5+Math.random()*3)+'s';el.style.animationDelay=(Math.random()*.5)+'s';
+  el.style.transform=`rotate(${Math.random()*360}deg)`;document.body.appendChild(el);
+  setTimeout(()=>el.remove(),6500);
+ }
+}
+function openSurprise(){
+ document.getElementById('surprise').style.display='block';
+ document.getElementById('openGift').textContent='Подарок открыт ❤️';
+ document.getElementById('openGift').disabled=true;
+ burst(100);
+}
+window.addEventListener('load',()=>setTimeout(()=>burst(35),450));
+</script>
+</body>
+</html>
